@@ -2,7 +2,13 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
 
-const ProjectBox = ({ projectImage, projectName }) => {
+const ProjectBox = ({
+  projectImage,
+  projectName,
+  DescriptionProject,
+  Githubproject,
+  Demowebsite,
+}) => {
   const description = {
     YourNotesApplicationDescription:
       "On this website, you can sign up and log in via a verified email account. After logging in, you can 'Add Your Daily Notes'. It's a responsive website. I also learned how to host my project on Github and then deploy that project using Vercel pages.",
@@ -27,10 +33,10 @@ const ProjectBox = ({ projectImage, projectName }) => {
     CinemaEntertainmentWebsite: "https://cinema-entertainment.vercel.app/",
   };
 
-  let show = "";
-  if (description[projectName + "Github"] === "") {
-    show = "none";
-  }
+  // let show = "";
+  // if (description[projectName + "Github"] === "") {
+  //   show = "none";
+  // }
 
   return (
     <div className="projectBox" style={{ maxWidth: "700px", margin: "10px" }}>
@@ -44,12 +50,12 @@ const ProjectBox = ({ projectImage, projectName }) => {
         <br />
         <h3>{projectName}</h3>
         <br />
-        {description[projectName + "Description"]}
+        <h4>{DescriptionProject}</h4>
         <br />
 
         <a
-          style={{ display: show }}
-          href={description[projectName + "Github"]}
+          // style={{ display: show }}
+          href={Githubproject}
           target="_blank"
           rel="noreferrer"
         >
@@ -58,11 +64,7 @@ const ProjectBox = ({ projectImage, projectName }) => {
           </button>
         </a>
 
-        <a
-          href={description[projectName + "Website"]}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={Demowebsite} target="_blank" rel="noreferrer">
           <button className="projectbtn">
             <CgFileDocument /> Demo
           </button>
