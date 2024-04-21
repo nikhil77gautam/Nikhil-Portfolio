@@ -32,9 +32,9 @@ const Home = () => {
           <p>
             Hi, I'm Nikhil Gautam, hailing from the vibrant city of Indore in
             Madhya Pradesh, India. I'm passionate about the transformative
-            process of turning ideas into impactful websites and products. I
-            thrive on challenges that push me as a developer and lead to work I
-            can truly be proud of.
+            process of turning ideas into impactful websites. I thrive on
+            challenges that push me as a developer and lead to work I can truly
+            be proud of.
             <br />
             <br />
             My expertise lies in{" "}

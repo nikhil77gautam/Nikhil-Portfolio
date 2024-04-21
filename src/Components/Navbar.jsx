@@ -61,7 +61,7 @@ const Nav = () => {
         </li>
         <li onClick={hideMenu}>
           <Link to="/Resume">
-            <CgFileDocument /> Resume
+            <CgFileDocument /> Resume/Hire Me
           </Link>
         </li>
       </ul>

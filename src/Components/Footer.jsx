@@ -19,6 +19,7 @@ const Footer = () => {
         <a href="gmail to:nikhil77.gautam@gmail.com" target="_blank">
           <GrMail />
         </a>
+        <a href="https://twitter.com/@nikhilg00256066" target="_blank"></a>
       </div>
     </footer>
   );
