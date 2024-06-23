@@ -4,6 +4,9 @@ import cinemaentertainmentimage from "../Images/cinemaentertainment.jpg";
 import contactformimage from "../Images/contactform.jpg";
 import yournotesapplicationimage from "../Images/yournotesapplication.jpg";
 import quotegeneratorimage from "../Images/quotegenerator.jpg";
+import internportfolioimage from "../Images/intern-portfolio.png";
+import weatherimageimage from "../Images/weather-image.png";
+import hradmindashboardimage from "../Images/HR-Admin Dashboard.png";
 
 const Projects = () => {
   return (
@@ -39,6 +42,28 @@ const Projects = () => {
           DescriptionProject="Explore this website to discover randomly generated quotes that are sure to inspire and motivate you."
           GithubProject="https://github.com/nikhil77gautam/Mentorkart.git"
           DemoWebsite=""
+        />
+        <ProjectBox
+          projectImage={internportfolioimage}
+          projectName="Portfolio Website"
+          DescriptionProject="Explore our completed projects on this portfolio website and reach out via our contact or mailing details. Have a project in mind? Share it with us, and let's create something amazing together. Discover our work, learn about our capabilities, and connect with us for potential collaborations or inquiries"
+          GithubProject="https://github.com/nikhil77gautam/Portfolio-Website-Page.git"
+          DemoWebsite=""
+        />
+        <ProjectBox
+          projectImage={weatherimageimage}
+          projectName="Live Weather Forcast Website"
+          DescriptionProject="On this weather website, you can check live weather updates for any location you want. Get real-time information about current conditions, forecasts, and weather alerts for your desired area. Stay informed and plan your day with accurate weather data at your fingertips."
+          GithubProject="https://github.com/nikhil77gautam/Weather-Application-Website.git"
+          DemoWebsite=""
+        />
+        <ProjectBox
+          projectImage={hradmindashboardimage}
+          projectName="HR-Admin Dashboard Website"
+          DescriptionProject="On this website, HR and Admin can create their own accounts and manage their activities.
+          HR can add freshers and experienced users, whose status will be shown as 'Pending' until the Admin responds. The Admin can then approve or reject the users after the recruitment process. Additionally, both HR and Admin can track the progress and status of all user accounts efficiently."
+          GithubProject="https://github.com/nikhil77gautam/HR-Admin-Dashboard.git"
+          DemoWebsite="hr-admin-frontend-8kqf.vercel.app"
         />
       </div>
     </div>

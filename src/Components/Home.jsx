@@ -16,7 +16,7 @@ const Home = () => {
           </h1>
           <br />
           <h2>
-            <b>A Passionate Front-end Developer From India.</b>
+            <b>A Passionate MERN- Full Stack Developer From India.</b>
           </h2>
           <Typed />
         </div>

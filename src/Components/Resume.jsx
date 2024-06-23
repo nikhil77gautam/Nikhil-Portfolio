@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BsDownload } from "react-icons/bs";
-import pdf from "../Nikhil_Gautam-CV..pdf";
+import pdf from "../Nikhil_Gautam-CV3.pdf";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";

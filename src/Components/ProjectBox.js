@@ -33,10 +33,7 @@ const ProjectBox = ({
     CinemaEntertainmentWebsite: "https://cinema-entertainment.vercel.app/",
   };
 
-  // let show = "";
-  // if (description[projectName + "Github"] === "") {
-  //   show = "none";
-  // }
+
 
   return (
     <div className="projectBox" style={{ maxWidth: "700px", margin: "10px" }}>
