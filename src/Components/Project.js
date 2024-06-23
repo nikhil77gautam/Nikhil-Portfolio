@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
 import ProjectBox from "./ProjectBox";
 import cinemaentertainmentimage from "../Images/cinemaentertainment.jpg";
 import contactformimage from "../Images/contactform.jpg";
@@ -9,13 +10,49 @@ import weatherimageimage from "../Images/weather-image.png";
 import hradmindashboardimage from "../Images/HR-Admin Dashboard.png";
 
 const Projects = () => {
+  useEffect(() => {
+    const floatingAnimationText = gsap.to(".floatingText", {
+      y: "+=20",
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      duration: 2,
+      paused: true,
+    });
+
+    const floatingAnimationBox = gsap.to(".floatingBox", {
+      y: "+=10",
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      duration: 2,
+      paused: true,
+    });
+
+    document.querySelectorAll(".floatingText").forEach((element) => {
+      element.addEventListener("mouseover", () =>
+        floatingAnimationText.pause()
+      );
+      element.addEventListener("mouseout", () => floatingAnimationText.play());
+    });
+
+    document.querySelectorAll(".floatingBox").forEach((element) => {
+      element.addEventListener("mouseover", () => floatingAnimationBox.pause());
+      element.addEventListener("mouseout", () => floatingAnimationBox.play());
+    });
+
+    floatingAnimationText.play();
+    floatingAnimationBox.play();
+  }, []);
+
   return (
     <div>
-      <h1 className="projectHeading">
+      <h1 className="projectHeading floatingText">
         My <b>Projects :</b>
       </h1>
       <div className="project">
         <ProjectBox
+          className="floatingBox"
           projectImage={cinemaentertainmentimage}
           projectName="Cinema Entertainment"
           DescriptionProject="You can explore your favorite movies on this website by searching for them and tapping to view detailed information. Please note that while you can find and learn about movies here, playback functionality is not available."
@@ -23,6 +60,7 @@ const Projects = () => {
           Demowebsite="https://cinema-entertainment.vercel.app/"
         />
         <ProjectBox
+          className="floatingBox"
           projectImage={contactformimage}
           projectName="Contact Form"
           DescriptionProject="This website features a contact form that enables you to connect with others through your email account, allowing you to send messages directly to their email addresses. Similar to Gmail, this form supports one-way communication, meaning only one person can send a message to another. However, if both parties have access to the website link, they can exchange messages with each other's email accounts."
@@ -30,6 +68,7 @@ const Projects = () => {
           DemoWebsite=""
         />
         <ProjectBox
+          className="floatingBox"
           projectImage={yournotesapplicationimage}
           projectName="Your Notes Application"
           DescriptionProject="This website offers a seamless experience where you can easily sign up and log in using a verified email account. Once logged in, you can conveniently 'Add Your Daily Notes'. The website is fully responsive, ensuring a smooth user experience across devices. Additionally, I have learned how to host my projects on Github and deploy them using Vercel pages."
@@ -37,6 +76,7 @@ const Projects = () => {
           DemoWebsite="https://todo-frontend-sandy-nu.vercel.app/"
         />
         <ProjectBox
+          className="floatingBox"
           projectImage={quotegeneratorimage}
           projectName="Quote Generator"
           DescriptionProject="Explore this website to discover randomly generated quotes that are sure to inspire and motivate you."
@@ -44,6 +84,7 @@ const Projects = () => {
           DemoWebsite=""
         />
         <ProjectBox
+          className="floatingBox"
           projectImage={internportfolioimage}
           projectName="Portfolio Website"
           DescriptionProject="Explore our completed projects on this portfolio website and reach out via our contact or mailing details. Have a project in mind? Share it with us, and let's create something amazing together. Discover our work, learn about our capabilities, and connect with us for potential collaborations or inquiries"
@@ -51,6 +92,7 @@ const Projects = () => {
           DemoWebsite=""
         />
         <ProjectBox
+          className="floatingBox"
           projectImage={weatherimageimage}
           projectName="Live Weather Forcast Website"
           DescriptionProject="On this weather website, you can check live weather updates for any location you want. Get real-time information about current conditions, forecasts, and weather alerts for your desired area. Stay informed and plan your day with accurate weather data at your fingertips."
@@ -58,6 +100,7 @@ const Projects = () => {
           DemoWebsite=""
         />
         <ProjectBox
+          className="floatingBox"
           projectImage={hradmindashboardimage}
           projectName="HR-Admin Dashboard Website"
           DescriptionProject="On this website, HR and Admin can create their own accounts and manage their activities.
