@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AiOutlineHome } from "react-icons/ai";
-import { BsPerson, BsCodeSlash } from "react-icons/bs";
+import { BsPerson } from "react-icons/bs";
 import { CgFileDocument } from "react-icons/cg";
-
+import { MdOutlineHome } from "react-icons/md";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 const Nav = () => {
   const [navbarblur, setNavbarBlur] = useState(false);
 
@@ -35,7 +35,7 @@ const Nav = () => {
 
   return (
     <nav className={navbarblur ? "Navbar blur" : "Navbar"}>
-      <h1 className="Logo">NG</h1>
+      <h1 className="Logo">Nikhil Gautam</h1>
 
       <div className="Hamburger" onClick={showMenu}>
         <span className="bar"></span>
@@ -46,23 +46,24 @@ const Nav = () => {
       <ul className={menuOpen ? "NavbarLinks showNavbar" : "NavbarLinks"}>
         <li onClick={hideMenu}>
           <Link to="/">
-            <AiOutlineHome /> Home
+            <MdOutlineHome />
+            Home
           </Link>
         </li>
         <li onClick={hideMenu}>
           <Link to="/About">
-            <BsPerson /> About
+            <BsPerson />
+            About
           </Link>
         </li>
         <li onClick={hideMenu}>
           <Link to="/Project">
-            <BsCodeSlash /> Project
+            <AiOutlineFundProjectionScreen />
+            Projects
           </Link>
         </li>
         <li onClick={hideMenu}>
-          <Link to="/Resume">
-            <CgFileDocument /> Resume/Hire Me
-          </Link>
+          <Link to="/Resume">💼Hire Me</Link>
         </li>
       </ul>
     </nav>

@@ -212,7 +212,7 @@ b {
   align-items: center;
 }
 .HomeText h1 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 38px;
   letter-spacing: 0.7px;
   padding-top: 10px;
@@ -474,7 +474,7 @@ b {
 
 footer {
   width: 90%;
-  height: 40px;
+  height: 50px;
   margin: 10px auto;
   margin-top: 80px;
   letter-spacing: 0.5px;
@@ -485,25 +485,35 @@ footer {
   justify-content: space-evenly;
 
   position: relative;
-  bottom: 0px;
+  bottom: 0;
   text-align: center;
 }
 
-footer h4 {
+/* Ensure text remains static */
+.footerText {
   margin: 0 25px;
   font-weight: 500;
+  position: relative;
 }
 
+/* Ensure links remain static */
 .footerLinks {
   display: flex;
   width: 180px;
   font-size: 18px;
   justify-content: space-evenly;
+  height: 58px;
 }
 
+/* Links styling */
 .footerLinks a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease-in-out;
+}
+
+.footerLinks a:hover {
+  color: #0073b1;
 }
 
 @media (max-width: 750px) {
@@ -661,5 +671,3 @@ textarea {
 .icon-color {
   color: #e6ff01 !important;
 }
-
-

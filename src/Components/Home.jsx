@@ -1,15 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typed from "./Typed";
 import Tilt from "react-parallax-tilt";
+import { CiCoffeeCup } from "react-icons/ci";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import spaceboy from "../Images/spaceboy.jpg";
 import avatarboy from "../Images/avatarboy.jpg";
-import { CiCoffeeCup } from "react-icons/ci";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
+
   useEffect(() => {
     gsap.from(".HomeText h1", {
       opacity: 0,
@@ -84,7 +87,28 @@ const Home = () => {
     });
 
     floatingAnimation.play();
+
+    // Detect scroll position
+    const handleScroll = () => {
+      const aboutSection = document.querySelector(".AboutPage");
+      const rect = aboutSection.getBoundingClientRect();
+      setIsScrolledDown(rect.top < window.innerHeight / 2); // Set true when scrolled halfway down
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Scroll function
+  const scrollPage = () => {
+    if (isScrolledDown) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      document.querySelector(".AboutPage").scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <div>
@@ -118,23 +142,57 @@ const Home = () => {
             <br />
             <br />
             My expertise lies in{" "}
-            <b>HTML, CSS, JavaScript, React, Node.js, and MongoDB,</b> with a
-            sprinkling of <b>Python knowledge.</b> Currently, I'm immersed in
-            various projects within the <b>MERN Stack,</b> constantly honing my
-            skills and exploring new possibilities.
+            <b>
+              HTML, CSS, JavaScript, React, Redux, React-Native(Basic), Node.js,
+              Express.js and MongoDB,
+            </b>{" "}
+            with hands-on experience in various <b>MERN Stack</b> projects.
+            Currently, I'm immersed in various projects within the{" "}
+            <b>MERN Stack,</b> I'm continuously refining my skills and exploring
+            new possibilities.
             <br />
-            Looking ahead, I'm eager to delve into <b> Next.js </b>,{" "}
-            <b>Three.js</b> and
-            <b> Typescript </b> to broaden my skill set further. <br />
+            Looking ahead, I'm eager to expand my knowledge by diving into{" "}
+            <b> Next.js </b>, <b>Three.js</b> and
+            <b> Typescript </b> to further enhance my expertise. <br />
             <br />
-            Oh, and did I mention, I absolutely adore <b>coffee</b>{" "}
-            <CiCoffeeCup />
+            Oh, and did I mention? I have a deep appreciation for <b>
+              coffee
+            </b>{" "}
+            <CiCoffeeCup />.
           </p>
         </div>
         <Tilt>
           <img className="avatarboy" src={avatarboy} alt="Avatarboy.jpg" />
         </Tilt>
       </div>
+
+      {/* Up/Down arrow button */}
+      <div className="scroll-arrow" onClick={scrollPage}>
+        {isScrolledDown ? <FaArrowUp /> : <FaArrowDown />}
+      </div>
+
+      {/* Styling for the arrow */}
+      <style>
+        {`
+          .scroll-arrow {
+            position: fixed;
+            right: 20px;
+            bottom: 50%;
+            transform: translateY(50%);
+            font-size: 30px;
+            cursor: pointer;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+          }
+
+          .scroll-arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+          }
+        `}
+      </style>
     </div>
   );
 };
