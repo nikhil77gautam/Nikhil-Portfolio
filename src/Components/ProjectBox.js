@@ -33,8 +33,6 @@ const ProjectBox = ({
     CinemaEntertainmentWebsite: "https://cinema-entertainment.vercel.app/",
   };
 
-
-
   return (
     <div className="projectBox" style={{ maxWidth: "700px", margin: "10px" }}>
       <img
