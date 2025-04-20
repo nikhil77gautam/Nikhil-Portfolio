@@ -3,7 +3,7 @@ import { BsDownload } from "react-icons/bs";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import pdf from "../Nikhil_Gautam-cv (6).pdf";
+import pdf from "../Updated CV Nikhil (2)1.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
